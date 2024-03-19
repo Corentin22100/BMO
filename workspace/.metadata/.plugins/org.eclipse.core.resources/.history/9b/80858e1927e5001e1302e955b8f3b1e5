@@ -1,0 +1,25 @@
+package com.yourcompany.bmo.model;
+
+import javax.persistence.*;
+import javax.persistence.Entity;
+
+import org.hibernate.annotations.*;
+import org.openxava.annotations.*;
+
+import lombok.*;
+@Entity @Getter @Setter
+public class Parier {
+	@Column(length=5)
+    int montant; 
+	@Embedded
+	Basket basket;
+	
+	@Embedded
+	Foot foot;
+	
+	@Embedded
+	Tennis tennis;
+	
+	@Embedded
+	Course coursesDeChevaux;
+}

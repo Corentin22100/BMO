@@ -1,0 +1,16 @@
+package com.yourcompany.bmo.model;
+import javax.persistence.*;
+
+import lombok.*;
+@Entity
+@Getter @Setter // This makes all fields below publicly accessible
+public class Evenements {
+	
+	@Embedded
+	Matchs foot;
+	@Embedded
+	Matchs basket;
+	@Embedded
+	Matchs tennis;
+	
+}

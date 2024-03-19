@@ -1,0 +1,34 @@
+package com.yourcompany.bmo.model;
+
+import javax.persistence.*;
+
+import lombok.*;
+
+@Entity @Getter @Setter
+public class Resultats{
+	
+    //@Hidden // The property is not shown to the user. It's an internal identifier
+    /*@GeneratedValue(generator="system-uuid") // Universally Unique Identifier (1)
+    @GenericGenerator(name="system-uuid", strategy = "uuid")*/
+	@Embedded
+	Basket basket;
+	
+	@Embedded
+	PariSimple pariSimpleFoot;
+	
+	@Embedded
+	PariAvanceFoot pariAvancésFoot;
+	
+	@Embedded
+	PariSimple pariSimpleTennis;
+	
+	@Embedded
+	PariAvanceTennis pariAvancésTennis;
+	
+	
+	@Embedded
+	Course coursesDeChevaux;
+	
+
+	
+}

@@ -1,0 +1,24 @@
+package com.yourcompany.bmo.model;
+import java.math.*;
+import java.time.*;
+
+import javax.persistence.*;
+
+import org.openxava.annotations.*;
+
+import lombok.*;
+@Embeddable
+@Getter @Setter // This makes all fields below publicly accessible
+public class Matchs {
+	@Column(length=32)@Required
+    String nomEquipeOuJoueur1;
+	@Column(length=32)@Required
+    String nomEquipeOuJoueur2;
+	@Required
+	LocalDate date;
+	@Embedded
+	PariSimple ResultatPariSimple;
+	
+	@Money
+	BigDecimal montantMaximal;
+}

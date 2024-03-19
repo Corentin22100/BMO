@@ -1,0 +1,3 @@
+cd -- "$(dirname -- "$BASH_SOURCE")"
+xattr -rd com.apple.quarantine studio/
+studio/Contents/MacOS/eclipse -vm ../../jre/bin -data ../../../workspace

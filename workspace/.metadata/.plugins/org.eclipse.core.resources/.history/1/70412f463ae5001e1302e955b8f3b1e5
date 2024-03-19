@@ -1,0 +1,24 @@
+package com.yourcompany.bmo.model;
+
+import javax.persistence.*;
+
+import lombok.*;
+
+@Embeddable @Getter @Setter
+public class Resultats{
+	
+	@Embedded
+	PariSimple pariSimple;
+
+	@Embedded
+	PariAvanceBasket pariAvancésBasket;
+	
+	@Embedded
+	PariAvanceTennis pariAvancésCoursesDeChevaux;
+	
+	@Embedded
+	PariAvanceFoot pariAvancésFoot;
+	
+	@Embedded
+	PariAvanceTennis pariAvancésTennis;
+}
