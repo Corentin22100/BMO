@@ -1,0 +1,12 @@
+package com.yourcompany.bmo.model;
+import javax.persistence.*;
+import javax.persistence.Entity;
+
+import org.hibernate.annotations.*;
+import org.openxava.annotations.*;
+import lombok.*;
+@Entity  // This marks Customer class as an entity
+@Getter @Setter // This makes all fields below publicly accessible
+public class Foot {
+
+}

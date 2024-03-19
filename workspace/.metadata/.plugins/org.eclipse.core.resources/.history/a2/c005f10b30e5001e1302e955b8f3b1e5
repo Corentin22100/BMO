@@ -1,0 +1,34 @@
+package com.yourcompany.bmo.model;
+
+import java.math.*;
+
+import javax.persistence.*;
+
+import org.openxava.annotations.*;
+
+import lombok.*;
+@Entity @Getter @Setter
+public class Parier {
+	@Id
+	BigDecimal montantDuPari; 
+	
+	@Embedded
+	Basket basket;
+	
+	@ManyToOne( // The reference is persisted as a database relationship
+			fetch=FetchType.LAZY, // The reference is loaded on demand
+	        optional=true) // The reference can have no value
+    Resultats sports; // A regular Java reference
+	
+	@Embedded
+	PariSimple pariSimpleFoot;
+	
+	@Embedded
+	PariAvanceFoot pariAvancésFoot;
+	
+	@Embedded
+	Tennis tennis;
+	
+	@Embedded
+	Course coursesDeChevaux;
+}

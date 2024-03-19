@@ -1,0 +1,19 @@
+package com.yourcompany.bmo.model;
+import java.time.*;
+
+import javax.persistence.*;
+
+import lombok.*;
+@Embeddable
+@Getter @Setter // This makes all fields below publicly accessible
+public class Sports {
+	
+	@Column(length=32)
+	@Required
+    String nomEquipe1;
+	@Column(length=32)
+    String nomEquipe2;
+	
+	LocalDate date;
+
+}

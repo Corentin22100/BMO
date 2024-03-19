@@ -1,0 +1,34 @@
+package com.yourcompany.bmo.model;
+
+import javax.persistence.*;
+
+import org.openxava.annotations.*;
+
+import lombok.*;
+
+@Entity 
+public class Resultats{
+	@Getter @Setter
+	@ManyToOne( // The reference is persisted as a database relationship
+			fetch=FetchType.LAZY,// The reference is loaded on demand
+			optional=false) // il ne peut pas être vide
+    Evenements evenementSportif; // A regular Java reference
+	
+	@ElementCollection
+	Collection<Matchs> details;
+	@Getter @Setter
+	@Embedded@NoFrame
+	PariSimple resultatPariSimple;
+	@Getter @Setter
+	@Embedded
+	PariAvanceBasket scoreBasket;
+	@Getter @Setter
+	@Embedded
+	PariAvanceCourse classementCoursesDeChevaux;
+	@Getter @Setter
+	@Embedded
+	PariAvanceFoot scoreFoot;
+	@Getter @Setter
+	@Embedded
+	PariAvanceTennis scoreTennis;
+}
